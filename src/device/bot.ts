@@ -726,7 +726,9 @@ export class Bot {
       if (value === this.platform.Characteristic.TargetDoorState.CLOSED) {
         this.On = false;
       } else {
-        this.On = true;
+        setTimeout(() => {
+          this.On = true;
+        }, 10000);
       }
     } else if (
       this.device.bot?.deviceType === 'door' ||
